@@ -1,0 +1,5 @@
+package godebug
+
+func InitPackage() {
+
+}
