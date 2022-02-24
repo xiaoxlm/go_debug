@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	//debug.Sched()
+	// debug.Sched()
 	godebug.GC()
 
 	time.Sleep(60 * 10 * time.Second)
