@@ -1,6 +1,9 @@
 package godebug
 
-import "sync"
+import (
+	"fmt"
+	"sync"
+)
 
 func Sched() {
 	wg := sync.WaitGroup{}
@@ -15,4 +18,5 @@ func Sched() {
 		}(&wg)
 	}
 	wg.Wait()
+	fmt.Println("schedule done")
 }
