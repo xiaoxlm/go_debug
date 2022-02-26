@@ -23,9 +23,13 @@ func main() {
 	//		}
 	//	}()
 	//}
+	//{
+	//	// memory
+	//	go pprof.Alloc()
+	//}
 	{
-		// memory
-		go pprof.Alloc()
+		// gorountine
+		go pprof.Gorountine()
 	}
 
 	http.ListenAndServe(":8989", nil)
