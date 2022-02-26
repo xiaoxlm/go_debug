@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func Gorountine() {
+func TestGorountine() {
 	for{
 		go action()
 		time.Sleep(100 * time.Millisecond)

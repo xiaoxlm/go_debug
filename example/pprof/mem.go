@@ -10,10 +10,10 @@ type Obj struct {
 	Arr []int
 }
 
-func Alloc() {
+func TestAlloc() {
 	o := allocObject()
 	time.Sleep(500 * time.Millisecond)
-	Alloc()
+	TestAlloc()
 	fmt.Println(o)
 }
 

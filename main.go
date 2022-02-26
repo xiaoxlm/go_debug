@@ -25,11 +25,16 @@ func main() {
 	//}
 	//{
 	//	// memory
-	//	go pprof.Alloc()
+	//	go pprof.TestAlloc()
 	//}
+	//{
+	//	// gorountine
+	//	go pprof.TestGorountine()
+	//}
+
 	{
-		// gorountine
-		go pprof.Gorountine()
+		// mutex
+		go pprof.TestMutex()
 	}
 
 	http.ListenAndServe(":8989", nil)
