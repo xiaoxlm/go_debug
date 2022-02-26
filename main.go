@@ -3,7 +3,6 @@ package main
 import (
 	"go_debug/example/pprof"
 	"net/http"
-	"time"
 	_ "net/http/pprof"
 )
 
@@ -15,17 +14,20 @@ func main() {
 	/***GODEBUG***/
 
 	/***pprof***/
+	//{
+	//	// cpu
+	//	go func() {
+	//		for {
+	//			pprof.TestCPU()
+	//			time.Sleep(500 * time.Millisecond)
+	//		}
+	//	}()
+	//}
 	{
-		// cpu profile
-		go func() {
-			for {
-				pprof.TestCPU()
-				time.Sleep(500 * time.Millisecond)
-			}
-		}()
-
-		http.ListenAndServe(":8989", nil)
+		// memory
+		go pprof.Alloc()
 	}
 
+	http.ListenAndServe(":8989", nil)
 	/***pprof***/
 }
